@@ -1,1 +1,1 @@
-export const resourceTypes = ["data", "fuel", "ink", "gold"] as const;
+export const resourceTypes = ["data", "fuel", "ink", "gold", 'e-coins'] as const;

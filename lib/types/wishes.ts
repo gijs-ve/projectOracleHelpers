@@ -1,16 +1,16 @@
-import { wishTypes } from "../world/wishes";
 import { Operator } from "./operators";
+import { OracleType } from "./oracles";
 
 // todo: redesign Wish
 
-export type WishType = (typeof wishTypes)[number];
+
 export type Wish = {
   id: string;
-  worldId: string;
+  oracleId: string;
   goalId: string;
   word: string;
-  type: WishType;
-  definition: string;
+  type: OracleType;
+  description: string;
   attempts: number;
   wonBy: Omit<Operator, "worldId">[];
 };

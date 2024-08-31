@@ -20,7 +20,7 @@ export * from './lib/world/loot';
 export * from './lib/world/machines';
 export * from './lib/world/resources';
 export * from './lib/world/rooms';
-export * from './lib/world/wishes';
+export * from './lib/world/oracle';
 
 
 
