@@ -1,4 +1,4 @@
-import { Tier } from "./generic";
+import { Slot, Tier } from "./generic";
 import { Letter } from "./letters";
 import { Resource } from "./resources";
 import { Room } from "./rooms";
@@ -22,4 +22,5 @@ type PrivateOperator = PublicOperator & {
   };
   resources: Resource[];
   rooms: Room[];
+  inventory: Slot[]
 };

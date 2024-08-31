@@ -1,18 +1,15 @@
 import { machineActionTypes, machineTypes } from "../world/machines";
 import { Tier } from "./generic";
+import { CoordinatedObject } from "./objects";
 import { ResourceType } from "./resources";
 
 export type MachineType = (typeof machineTypes)[number];
 export type MachineActionType = (typeof machineActionTypes)[number];
 
-type RawMachine = DataObject<{
+type RawMachine = CoordinatedObject<{
   perMinute: number;
   type: MachineType;
   roomId: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
 }>;
 
 export type Machine<T extends MachineType = MachineType> =

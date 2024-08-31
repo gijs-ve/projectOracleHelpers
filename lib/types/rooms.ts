@@ -1,10 +1,8 @@
+import { Slot } from "./generic";
 import { Machine } from "./machines";
+import { SlotObject } from "./objects";
 
-export type Room = DataObject<{
+export type Room = SlotObject<{
   name: string;
-  worldId: string;
   operatorId: string;
-  xSize: number;
-  ySize: number;
-  machines: Machine[];
 }>;
