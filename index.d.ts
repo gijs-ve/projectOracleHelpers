@@ -10,6 +10,7 @@ export * from './lib/types/resources';
 export * from './lib/types/rooms';
 export * from './lib/types/stash';
 export * from './lib/types/users';
+export * from './lib/types/vendors';
 export * from './lib/types/wishes';
 export * from './lib/types/words';
 

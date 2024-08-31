@@ -24,5 +24,7 @@ type DataKeys =
   | "rooms"
   | "words"
   | "x"
-  | "y";
-export type WorldObject<T extends DataObject<Y>, Y = {}> = Omit<T, Ids | DataKeys>;
+  | "y"
+  | "slots"
+  | "order"
+export type WorldObject<T extends DataObject<Y>, Y = {}> = Omit<T, Ids | DataKeys> & {name: string}

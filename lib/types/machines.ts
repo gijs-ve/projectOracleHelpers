@@ -1,5 +1,5 @@
 import { machineActionTypes, machineTypes } from "../world/machines";
-import { Tier } from "./generic";
+import { Cost, Tier } from "./generic";
 import { CoordinatedObject } from "./objects";
 import { ResourceType } from "./resources";
 
@@ -19,4 +19,5 @@ export type Machine<T extends MachineType = MachineType> =
       }
     : RawMachine & {
         tier?: Tier;
+        costPerAction: Cost[];
       };

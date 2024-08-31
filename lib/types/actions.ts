@@ -23,8 +23,8 @@ export type Action<T extends ActionType = ActionType> = T extends "makeWord"
 type RawAction = {
   id: string;
   type: ActionType;
-  createdAt: string;
-  finishedAt: string;
+  startedAt: Date;
+  finishedAt: Date;
 };
 
 type MakeWordAction = RawAction & {

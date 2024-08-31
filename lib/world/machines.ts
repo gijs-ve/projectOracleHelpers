@@ -10,33 +10,140 @@ export const machineActionTypes = [
 ] as const;
 export const machineTypes = [...machineActionTypes, "makeResource"] as const;
 
+
+const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
+  {
+    name: "Graphomotus I",
+    ref: "make-letter-1-1", 
+    type: "makeLetter",
+    perMinute: 0.02,
+    tier: 1,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 5, fuel: 1}]
+  },
+  {
+    name: "Graphomotus II",
+    ref: "make-letter-1-2",
+    type: "makeLetter",
+    perMinute: 0.05,
+    tier: 1,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 10, fuel: 5, ink: 1}]
+  },
+  {
+    name: "Graphomotus III",
+    ref: "make-letter-1-3",
+    type: "makeLetter",
+    perMinute: 0.1,
+    tier: 1,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 15, fuel: 10, ink: 5}]
+  },
+  {
+    name: 'Litterafex I',
+    ref: "make-letter-2-1",
+    type: "makeLetter",
+    perMinute: 0.02,
+    tier: 2,
+    xSize: 2,
+    ySize: 1,
+    costPerAction: [{money: 25, fuel: 15, ink: 10}]
+  },
+  {
+    name: 'Litterafex II',
+    ref: "make-letter-2-2",
+    type: "makeLetter",
+    perMinute: 0.05,
+    tier: 2,
+    xSize: 2,
+    ySize: 1,
+    costPerAction: [{money: 50, fuel: 25, ink: 15}]
+  },
+  {
+    name: 'Litterafex III',
+    ref: "make-letter-2-1",
+    type: "makeLetter",
+    perMinute: 0.12,
+    tier: 2,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 75, fuel: 50, ink: 25}]
+  },
+  {
+    name: 'Epistulatrix I',
+    ref: "make-letter-3-1",
+    type: "makeLetter",
+    perMinute: 0.008,
+    tier: 3,
+    xSize: 2,
+    ySize: 2,
+    costPerAction: [{money: 100, fuel: 75, ink: 50}]
+  },
+  {
+    name: 'Epistulatrix II',
+    ref: "make-letter-3-2",
+    type: "makeLetter",
+    perMinute: 0.035,
+    tier: 3,
+    xSize: 2,
+    ySize: 2,
+    costPerAction: [{money: 150, fuel: 100, ink: 75}]
+  }
+];
+
+const resourceMachines: (WorldObject<Machine<"makeResource">>)[] = [
+  {
+    name: 'Paperclip maker',
+    ref: "machine-money-1",
+    type: "makeResource",
+    perMinute: 0.1,
+    resource: "money",
+    xSize: 1,
+    ySize: 1,
+  },
+  {
+    name: 'Old container',
+    ref: "machine-fuel-1",
+    type: "makeResource",
+    perMinute: 0.1,
+    resource: "fuel",
+    xSize: 1,
+    ySize: 1,
+  }
+]
+
+const wordMachines: (WorldObject<Machine<"makeWord">>)[] = [
+  {
+    name: 'Verbifex I',
+    ref: "make-word-1-1",
+    type: "makeWord",
+    perMinute: 0.02,
+    tier: 1,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 50, fuel: 2}]
+  },
+  {
+    name: 'Verbifex II',
+    ref: "make-word-1-2",
+    type: "makeWord",
+    perMinute: 0.05,
+    tier: 1,
+    xSize: 1,
+    ySize: 1,
+    costPerAction: [{money: 100, fuel: 5}]
+  },
+]
+
 export const machines:
   | (
       | WorldObject<Machine<"makeResource">>
       | WorldObject<Machine<MachineActionType>>
     )[] = [
-  {
-    ref: "make-word-1-1",
-    type: "makeWord",
-    perMinute: 0.25,
-    tier: 1,
-    xSize: 1,
-    ySize: 1,
-  },
-  {
-    ref: "make-word-1-2",
-    type: "makeWord",
-    perMinute: 0.5,
-    tier: 1,
-    xSize: 1,
-    ySize: 1,
-  },
-  {
-    ref: "machine-5",
-    type: "makeResource",
-    perMinute: 0.2,
-    resource: "data",
-    xSize: 1,
-    ySize: 1,
-  },
-];
+      ...letterMachines,
+      ...resourceMachines,
+      ...wordMachines,
+]
