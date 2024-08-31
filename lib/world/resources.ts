@@ -1,0 +1,1 @@
+export const resourceTypes = ["data", "fuel", "ink", "gold"] as const;

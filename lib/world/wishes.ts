@@ -1,0 +1,1 @@
+export const wishTypes = ["history", "sciene"] as const;
