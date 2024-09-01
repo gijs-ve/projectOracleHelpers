@@ -10,13 +10,13 @@ export const rooms: WorldObject<Room>[] = [
   },
   {
     ref: "room-4x4",
-    name: "Coding School Classroom",
+    name: "Former barbershop",
     xSize: 4,
     ySize: 4,
   },
   {
     ref: "room-5x6",
-    name: "Former barbershop",
+    name: "Coding School Classroom",
     xSize: 5,
     ySize: 6,
   },

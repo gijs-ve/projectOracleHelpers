@@ -10,7 +10,6 @@ export const machineActionTypes = [
 ] as const;
 export const machineTypes = [...machineActionTypes, "makeResource"] as const;
 
-
 const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
   {
     name: "Graphomotus I",

@@ -1,6 +1,5 @@
 import { Cost } from "./generic";
 import { LetterKeys } from "./letters";
-import { ResourceType } from "./resources";
 
 export type Vendor = {
     name: string;

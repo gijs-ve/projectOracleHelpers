@@ -1,5 +1,5 @@
 import { slotTypes } from "../world/generic";
-import { Loot } from "./loot";
+import { Item } from "./items";
 import { Machine } from "./machines";
 import { ResourceType } from "./resources";
 import { Word } from "./words";
@@ -16,10 +16,10 @@ export type Slot = {
     type: SlotType
     machineId?: string;
     wordId?: string;
-    lootId?: string;
+    itemId?: string;
     machine?: Machine;
     word?: Word;
-    loot?: Loot;
+    item?: Item;
 }
 
 export type Cost<K extends ResourceType = ResourceType> = {

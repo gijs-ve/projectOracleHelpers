@@ -2,5 +2,5 @@ export const slotTypes = [
     'machine',
     'word',
     'stash',
-    'loot'
+    'item'
 ] as const;
