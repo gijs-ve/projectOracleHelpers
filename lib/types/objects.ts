@@ -16,6 +16,8 @@ export type SlotObject<T> = CoordinatedObject<T> & {
   slots: Slot
 }
 
+// todo: room object
+
 type Ids = "id" | "worldId" | "operatorId" | "roomId"
 type DataKeys =
   | "machines"

@@ -1,6 +1,6 @@
 import { Action } from "./actions";
 import { Slot, Tier } from "./generic";
-import { Letter } from "./letters";
+import { Letter, Letters } from "./letters";
 import { Resource } from "./resources";
 import { Room } from "./rooms";
 import { Word } from "./words";
@@ -16,9 +16,7 @@ type PublicOperator = {
 };
 
 type PrivateOperator = PublicOperator & {
-  letters: {
-    [key in Tier]: Letter[];
-  };
+  letters: Letters
   resources: Resource[];
   rooms: Room[];
   inventory: Slot[]

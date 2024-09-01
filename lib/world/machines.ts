@@ -42,7 +42,7 @@ const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
     costPerAction: [{money: 15, fuel: 10, ink: 5}]
   },
   {
-    name: 'Litterafex I',
+    name: 'Terafex I',
     ref: "make-letter-2-1",
     type: "makeLetter",
     perMinute: 0.02,
@@ -52,7 +52,7 @@ const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
     costPerAction: [{money: 25, fuel: 15, ink: 10}]
   },
   {
-    name: 'Litterafex II',
+    name: 'Terafex II',
     ref: "make-letter-2-2",
     type: "makeLetter",
     perMinute: 0.05,
@@ -62,7 +62,7 @@ const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
     costPerAction: [{money: 50, fuel: 25, ink: 15}]
   },
   {
-    name: 'Litterafex III',
+    name: 'Terafex III',
     ref: "make-letter-2-1",
     type: "makeLetter",
     perMinute: 0.12,
@@ -72,7 +72,7 @@ const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
     costPerAction: [{money: 75, fuel: 50, ink: 25}]
   },
   {
-    name: 'Epistulatrix I',
+    name: 'Epistula I',
     ref: "make-letter-3-1",
     type: "makeLetter",
     perMinute: 0.008,
@@ -82,7 +82,7 @@ const letterMachines: (WorldObject<Machine<"makeLetter">>)[] = [
     costPerAction: [{money: 100, fuel: 75, ink: 50}]
   },
   {
-    name: 'Epistulatrix II',
+    name: 'Epistula II',
     ref: "make-letter-3-2",
     type: "makeLetter",
     perMinute: 0.035,
