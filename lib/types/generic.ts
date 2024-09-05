@@ -8,6 +8,7 @@ export type Tier = 1 | 2 | 3;
 
 export type SlotType = typeof slotTypes[number] 
 export type Slot = {
+    id: string;
     roomId?: string;
     operatorId?: string;
     stashId?: string;

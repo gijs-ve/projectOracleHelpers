@@ -1,6 +1,8 @@
-import { SlotObject } from "./objects";
+import { Slot } from "./generic";
+import { DataObject } from "./objects";
 
-export type Room = SlotObject<{
+export type Room = DataObject<{
   operatorId: string;
   order: number;
+  slots: Slot[];
 }>;

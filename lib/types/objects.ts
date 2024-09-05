@@ -13,7 +13,7 @@ export type CoordinatedObject<T> = DataObject<T> & {
 };
 
 export type SlotObject<T> = CoordinatedObject<T> & {
-  slots: Slot
+  slots: Slot[]
 }
 
 // todo: room object
