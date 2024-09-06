@@ -1,5 +1,5 @@
-import { Cost } from './generic';
-import { LetterKeys } from './letters';
+import { Cost, Tier } from './generic';
+import { Letter } from './letters';
 
 export type Vendor = {
     id: string;
@@ -11,7 +11,10 @@ export type VendorItem = {
     id: string;
     ref?: string;
     word?: string;
-    letter?: LetterKeys;
+    letter?: {
+        letter: Letter;
+        tier: Tier;
+    };
     description: string;
     costs: Cost[];
 };
