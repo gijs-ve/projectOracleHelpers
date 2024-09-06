@@ -1,7 +1,7 @@
 import { fetchApi } from './fetch';
 
 const route = '/auctions';
-export const getAuctionsClient = async (serverUrl: string) => {
+export const getAuctionsClient = (serverUrl: string) => {
     const getAuctions = async ({
         take,
         offset,
@@ -19,7 +19,7 @@ export const getAuctionsClient = async (serverUrl: string) => {
         return response;
     };
 
-    const createOffer = async ({
+    const postOffer = async ({
         auctionId,
         bid,
     }: {
@@ -44,6 +44,6 @@ export const getAuctionsClient = async (serverUrl: string) => {
     };
     return {
         getAuctions,
-        createOffer,
+        postOffer,
     } as const;
 };

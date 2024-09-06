@@ -2,7 +2,7 @@ import { Action, Letter, Word } from '../types';
 import { fetchApi } from './fetch';
 
 const route = '/actions';
-export const getActionsClient = async (serverUrl: string) => {
+export const getActionsClient = (serverUrl: string) => {
     const getActions = async () => {
         const response = await fetchApi<Action[]>(serverUrl, `${route}`);
         if (!response.ok) {

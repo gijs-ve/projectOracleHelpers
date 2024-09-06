@@ -1,7 +1,7 @@
 import { fetchApi } from './fetch';
 
 const route = '/auth';
-export const getAuthClient = async (serverUrl: string) => {
+export const getAuthClient = (serverUrl: string) => {
     const login = async (email: string, password: string) => {
         const response = await fetchApi(serverUrl, `${route}/login`, {
             method: 'POST',

@@ -2,7 +2,7 @@ import { Word } from '../types';
 import { fetchApi } from './fetch';
 
 const route = '/words';
-export const getWordsClient = async (serverUrl: string) => {
+export const getWordsClient = (serverUrl: string) => {
     const getWords = async () => {
         const words = await fetchApi(serverUrl, `${route}`);
         if (!words.ok) {
