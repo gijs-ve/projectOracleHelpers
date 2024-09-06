@@ -1,9 +1,9 @@
-import { Operator } from "./operators";
+import { Operator } from './operators';
 
 export type World = {
     currentTime: Date;
-    id: string; 
+    id: string;
     name: string;
     operators: Operator[];
     targetStars: number;
-}
+};

@@ -1,7 +1,7 @@
-import { Tier } from "./generic";
+import { Tier } from './generic';
 
 export type Word = {
-  id: string;
-  text: string;
-  tier: Tier | 4;
+    id: string;
+    text: string;
+    tier: Tier | 4;
 };

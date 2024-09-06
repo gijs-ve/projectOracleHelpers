@@ -1,3 +1,3 @@
-import { machineActionTypes } from "./machines";
+import { machineActionTypes } from './machines';
 
-export const actionTypes = [...machineActionTypes, "makeMachine"] as const;
+export const actionTypes = [...machineActionTypes, 'makeMachine'] as const;
