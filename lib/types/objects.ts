@@ -27,6 +27,7 @@ type DataKeys =
     | 'y'
     | 'slots'
     | 'order';
+
 export type WorldObject<T extends DataObject<Y>, Y = {}> = Omit<
     T,
     Ids | DataKeys

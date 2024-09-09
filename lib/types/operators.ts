@@ -3,6 +3,7 @@ import { Slot } from './generic';
 import { Letters } from './letters';
 import { Resource } from './resources';
 import { Room } from './rooms';
+import { Word } from './words';
 
 export type Operator<T extends 'public' | 'private' = 'public'> =
     T extends 'public' ? PrivateOperator : PublicOperator;
@@ -16,6 +17,7 @@ type PublicOperator = {
 
 type PrivateOperator = PublicOperator & {
     letters: Letters;
+    unlockedWords: Word[];
     resources: Resource[];
     rooms: Room[];
     inventory: Slot[];
