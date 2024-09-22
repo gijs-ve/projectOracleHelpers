@@ -8,7 +8,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const getAction = async (actionId: string) => {
@@ -19,7 +19,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const buyLetter = async (letter: Letter) => {
@@ -33,7 +33,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const buyWord = async (word: Word) => {
@@ -47,7 +47,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const sellLetter = async (letter: Letter) => {
@@ -61,7 +61,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const sellWord = async (word: Word) => {
@@ -75,7 +75,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const formWord = async (letters: Letter[]) => {
@@ -89,7 +89,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const demolishLetter = async (letterId: string) => {
@@ -106,7 +106,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const demolishWord = async (wordId: string) => {
@@ -123,7 +123,7 @@ export const getActionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const submitPrompt = async (prompt: Word[]) => {

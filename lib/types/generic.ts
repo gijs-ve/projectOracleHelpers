@@ -4,6 +4,9 @@ import { Machine } from './machines';
 import { ResourceType } from './resources';
 import { Word } from './words';
 
+//tier 1: 1-3 letters
+//tier 2: 4-5 letters
+//tier 3: 6+ letters
 export type Tier = 1 | 2 | 3;
 
 export type SlotType = (typeof slotTypes)[number];

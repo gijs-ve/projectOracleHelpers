@@ -8,7 +8,7 @@ export const getWordsClient = (serverUrl: string) => {
         if (!words.ok) {
             throw new Error(words.error);
         }
-        return words;
+        return words.data;
     };
 
     const getWord = async (wordId: string) => {
@@ -16,7 +16,7 @@ export const getWordsClient = (serverUrl: string) => {
         if (!word.ok) {
             throw new Error(word.error);
         }
-        return word;
+        return word.data;
     };
 
     return {

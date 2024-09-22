@@ -18,7 +18,7 @@ export const getLeaderboardClient = (serverUrl: string) => {
         if (!leaderboard.ok) {
             throw new Error(leaderboard.error);
         }
-        return leaderboard;
+        return leaderboard.data;
     };
 
     return {

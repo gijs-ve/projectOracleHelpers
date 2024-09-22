@@ -13,7 +13,7 @@ export const getAuthClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     const register = async (email: string, password: string) => {
@@ -27,7 +27,7 @@ export const getAuthClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response;
+        return response.data;
     };
 
     return {

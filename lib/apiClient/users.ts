@@ -8,7 +8,7 @@ export const getUsersClient = (serverUrl: string) => {
         if (!user.ok) {
             throw new Error(user.error);
         }
-        return user;
+        return user.data;
     };
 
     return {
