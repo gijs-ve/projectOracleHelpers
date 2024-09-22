@@ -6,6 +6,6 @@ export type Letters = {
     [key in Letter]: number;
 };
 
-export type LetterTiers = {
+export type LettersTier = {
     [key in Tier]: Letters;
 };
