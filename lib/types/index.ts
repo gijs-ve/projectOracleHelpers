@@ -13,3 +13,4 @@ export * from './users';
 export * from './vendors';
 export * from './wishes';
 export * from './words';
+export * from './world';
