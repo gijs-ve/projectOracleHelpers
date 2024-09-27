@@ -9,3 +9,4 @@ export * from './lib/world/machines';
 export * from './lib/world/oracle';
 export * from './lib/world/resources';
 export * from './lib/world/rooms';
+export { itemTypes, newClient, oracleTypes, resourceTypes, rooms };
