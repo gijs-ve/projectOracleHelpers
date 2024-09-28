@@ -9,9 +9,12 @@ export type Operator<T extends 'public' | 'private' = 'public'> =
     T extends 'public' ? PublicOperator : PrivateOperator;
 
 export type PublicOperator = {
+    createdAt: Date;
+    updatedAt: Date;
+    name: string;
     id: string;
     userId: string;
-    worldId: string;
+    worldId: string | null;
     stars: number;
 };
 

@@ -8,9 +8,6 @@ export const getUsersClient = (serverUrl: string) => {
             serverUrl,
             route: `${route}/self`,
             token,
-            init: {
-                method: 'POST',
-            },
         });
         return response;
     };

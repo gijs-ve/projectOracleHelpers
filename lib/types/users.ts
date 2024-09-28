@@ -7,6 +7,8 @@ export type User<T extends 'public' | 'private' = 'public'> = T extends 'public'
 export type Self = PrivateUser;
 
 type PublicUser = {
+    createdAt: Date;
+    updatedAt: Date;
     id: string;
     name: string;
     victories: number;
