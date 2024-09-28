@@ -13,9 +13,6 @@ export const getAuctionsClient = (serverUrl: string) => {
             serverUrl,
             `${route}/auctions?take=${take}&offset=${offset}`,
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -37,9 +34,6 @@ export const getAuctionsClient = (serverUrl: string) => {
                 body: JSON.stringify({ bid }),
             },
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
     return {

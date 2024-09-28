@@ -5,9 +5,6 @@ const route = '/actions';
 export const getActionsClient = (serverUrl: string) => {
     const getActions = async () => {
         const response = await fetchApi<Action[]>(serverUrl, `${route}`);
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -16,9 +13,6 @@ export const getActionsClient = (serverUrl: string) => {
             serverUrl,
             `${route}/${actionId}`,
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -30,9 +24,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ letter }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -44,9 +35,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ word }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -58,9 +46,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ letter }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -72,9 +57,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ word }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -86,9 +68,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ letters }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -103,9 +82,6 @@ export const getActionsClient = (serverUrl: string) => {
                 },
             },
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -120,9 +96,6 @@ export const getActionsClient = (serverUrl: string) => {
                 },
             },
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
@@ -134,9 +107,6 @@ export const getActionsClient = (serverUrl: string) => {
             },
             body: JSON.stringify({ prompt }),
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
     return {

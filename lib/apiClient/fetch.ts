@@ -8,10 +8,13 @@ export const fetchApi = async <T, R = Res<T>>(
 ) => {
     try {
         const response = await fetch(`${serverUrl}${apiRoute}${route}`, init);
-        const data = await response.json();
+        const data = (await response.json()) as unknown;
         if (!response.ok) {
-            const { error } = data;
-            return { ok: false, error } as const;
+            if (typeof data === 'object' && data !== null && 'error' in data) {
+                const { error } = data;
+                return { ok: false, error } as const;
+            }
+            return { ok: false, error: 'Unknown error' } as const;
         }
         return { ok: true, data } as R;
     } catch (error) {
