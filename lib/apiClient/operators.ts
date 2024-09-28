@@ -3,6 +3,28 @@ import { fetchApi, tokenFetchApi } from './fetch';
 
 const route = '/operators';
 export const getOperatorsClient = (serverUrl: string) => {
+    const createOperator = async ({
+        token,
+        name,
+    }: {
+        token: string;
+        name: string;
+    }) => {
+        const response = await tokenFetchApi<Operator>({
+            serverUrl,
+            route,
+            token,
+            init: {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name }),
+            },
+        });
+        return response;
+    };
+
     const getOperators = async ({
         worldId,
         take,
@@ -41,20 +63,16 @@ export const getOperatorsClient = (serverUrl: string) => {
         token: string;
         operatorId: string;
     }) => {
-        const response = await fetchApi<Operator<'private'>>(
+        const response = await tokenFetchApi<Operator<'private'>>({
             serverUrl,
-            `${route}/self/${operatorId}`,
-            {
-                method: 'POST',
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            },
-        );
+            route: `${route}/self/${operatorId}`,
+            token,
+        });
         return response;
     };
 
     return {
+        createOperator,
         getOperators,
         getOperator,
         getPrivateOperator,
