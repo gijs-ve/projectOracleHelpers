@@ -1,8 +1,9 @@
 {
     "name": "project-oracle-helpers",
-    "version": "1.0.18",
+    "version": "1.0.22",
     "description": "",
-    "main": "./dist/index.js",
+    "main": "./dist/lib/index.js",
+    "module": "./dist/lib/index.mjs",
     "types": "./index.d.ts",
     "scripts": {
         "build": "tsc -p tsconfig.json"
@@ -10,8 +11,14 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "files": [
+        "dist",
+        "lib",
+        "index.d.ts"
+    ],
     "devDependencies": {
         "@types/node": "^22.5.1",
+        "tsup": "^8.3.0",
         "typescript": "^5.5.4"
     }
 }

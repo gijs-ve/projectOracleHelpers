@@ -1,7 +1,7 @@
-import { Letters } from '../world/letters';
+import { AlphabetLetters } from '../world/letters';
 import { Tier } from './generic';
 
-export type Letter = (typeof Letters)[number];
+export type Letter = (typeof AlphabetLetters)[number];
 export type Letters = {
     [key in Letter]: number;
 };

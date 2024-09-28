@@ -8,4 +8,3 @@ export * from './world/machines';
 export * from './world/oracle';
 export * from './world/resources';
 export * from './world/rooms';
-export { itemTypes, newClient, oracleTypes, resourceTypes, rooms };
