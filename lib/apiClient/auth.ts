@@ -1,4 +1,3 @@
-import { User } from '../types';
 import { fetchApi } from './fetch';
 
 const route = '/auth';
@@ -10,17 +9,17 @@ export const getAuthClient = (serverUrl: string) => {
         email: string;
         password: string;
     }) => {
-        const response = await fetchApi<
-            User<'private'> & {
-                token: string;
-            }
-        >(serverUrl, `${route}/login`, {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: {
-                'Content-Type': 'application/json',
+        const response = await fetchApi<{ token: string }>(
+            serverUrl,
+            `${route}/login`,
+            {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             },
-        });
+        );
         return response;
     };
 
@@ -33,17 +32,17 @@ export const getAuthClient = (serverUrl: string) => {
         email: string;
         password: string;
     }) => {
-        const response = await fetchApi<
-            User<'private'> & {
-                token: string;
-            }
-        >(serverUrl, `${route}/register`, {
-            method: 'POST',
-            body: JSON.stringify({ name, email, password }),
-            headers: {
-                'Content-Type': 'application/json',
+        const response = await fetchApi<{ token: string }>(
+            serverUrl,
+            `${route}/register`,
+            {
+                method: 'POST',
+                body: JSON.stringify({ name, email, password }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             },
-        });
+        );
         return response;
     };
 

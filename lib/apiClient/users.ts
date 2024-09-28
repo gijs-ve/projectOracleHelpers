@@ -1,14 +1,37 @@
 import { User } from '../types';
-import { fetchApi } from './fetch';
+import { tokenFetchApi } from './fetch';
 
 const route = '/users';
 export const getUsersClient = (serverUrl: string) => {
-    const getUser = async (userId: string) => {
-        const user = await fetchApi<User>(serverUrl, `${route}/${userId}`);
+    const getPrivateUser = async (token: string) => {
+        const response = await tokenFetchApi<User<'private'>>({
+            serverUrl,
+            route: `${route}/self`,
+            token,
+            init: {
+                method: 'POST',
+            },
+        });
+        return response;
+    };
+
+    const getUser = async ({
+        token,
+        userId,
+    }: {
+        token: string;
+        userId: string;
+    }) => {
+        const user = await tokenFetchApi<User>({
+            serverUrl,
+            route: `${route}/${userId}`,
+            token,
+        });
         return user;
     };
 
     return {
+        getPrivateUser,
         getUser,
     } as const;
 };

@@ -1,6 +1,6 @@
 import { Operator } from './operators';
 
-type Role = 'admin' | 'user';
+type Role = 'ADMIN' | 'USER';
 export type User<T extends 'public' | 'private' = 'public'> = T extends 'public'
     ? PublicUser
     : PrivateUser;

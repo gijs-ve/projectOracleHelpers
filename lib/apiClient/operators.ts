@@ -1,5 +1,5 @@
 import { Operator } from '../types';
-import { fetchApi } from './fetch';
+import { fetchApi, tokenFetchApi } from './fetch';
 
 const route = '/operators';
 export const getOperatorsClient = (serverUrl: string) => {
@@ -16,25 +16,47 @@ export const getOperatorsClient = (serverUrl: string) => {
             serverUrl,
             `${route}?worldId=${worldId}&take=${take}&offset=${offset}`,
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
-    const getOperator = async (operatorId: string) => {
-        const response = await fetchApi<Operator>(
+    const getOperator = async ({
+        token,
+        operatorId,
+    }: {
+        token: string;
+        operatorId: string;
+    }) => {
+        const response = await tokenFetchApi<Operator>({
             serverUrl,
-            `${route}/${operatorId}`,
+            route: `${route}/${operatorId}`,
+            token,
+        });
+        return response;
+    };
+
+    const getPrivateOperator = async ({
+        token,
+        operatorId,
+    }: {
+        token: string;
+        operatorId: string;
+    }) => {
+        const response = await fetchApi<Operator<'private'>>(
+            serverUrl,
+            `${route}/self/${operatorId}`,
+            {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
         );
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
         return response;
     };
 
     return {
         getOperators,
         getOperator,
+        getPrivateOperator,
     } as const;
 };

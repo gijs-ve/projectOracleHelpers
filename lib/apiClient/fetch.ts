@@ -21,3 +21,24 @@ export const fetchApi = async <T, R = Res<T>>(
         return { ok: false, error: error.message } as const;
     }
 };
+
+export const tokenFetchApi = async <T, R = Res<T>>({
+    serverUrl,
+    route,
+    token,
+    init,
+}: {
+    serverUrl: string;
+    route: string;
+    token: string;
+    init?: RequestInit;
+}) => {
+    const response = await fetchApi<T, R>(serverUrl, route, {
+        ...init,
+        headers: {
+            ...init?.headers,
+            Authorization: `Bearer ${token}`,
+        },
+    });
+    return response;
+};
