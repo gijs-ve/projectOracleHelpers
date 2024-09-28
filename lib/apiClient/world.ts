@@ -3,16 +3,24 @@ import { fetchApi } from './fetch';
 
 const route = '/world';
 export const getWorldClient = (serverUrl: string) => {
-    const getWorldData = async () => {
-        const world = await fetchApi<
+    const getWorld = async (id: string) => {
+        const response = await fetchApi<
             Omit<World, 'operators'> & {
                 operatorCount: number;
             }
+        >(serverUrl, `${route}/${id}`);
+        return response;
+    };
+
+    const getWorlds = async () => {
+        const response = await fetchApi<
+            Pick<World, 'id' | 'name' | 'createdAt'>[]
         >(serverUrl, `${route}`);
-        return world;
+        return response;
     };
 
     return {
-        getWorldData,
+        getWorld,
+        getWorlds,
     } as const;
 };

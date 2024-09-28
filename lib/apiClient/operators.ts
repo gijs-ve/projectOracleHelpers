@@ -1,4 +1,4 @@
-import { Operator } from '../types';
+import { Operator, PrivateOperator } from '../types';
 import { fetchApi, tokenFetchApi } from './fetch';
 
 const route = '/operators';
@@ -10,7 +10,7 @@ export const getOperatorsClient = (serverUrl: string) => {
         token: string;
         name: string;
     }) => {
-        const response = await tokenFetchApi<Operator>({
+        const response = await tokenFetchApi<PrivateOperator>({
             serverUrl,
             route,
             token,
