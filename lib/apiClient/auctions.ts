@@ -16,7 +16,7 @@ export const getAuctionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response.data;
+        return response;
     };
 
     const postOffer = async ({
@@ -40,7 +40,7 @@ export const getAuctionsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response.data;
+        return response;
     };
     return {
         getAuctions,

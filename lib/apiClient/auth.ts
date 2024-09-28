@@ -16,10 +16,7 @@ export const getAuthClient = (serverUrl: string) => {
                 'Content-Type': 'application/json',
             },
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
-        return response.data;
+        return response;
     };
 
     const register = async ({
@@ -38,10 +35,7 @@ export const getAuthClient = (serverUrl: string) => {
                 'Content-Type': 'application/json',
             },
         });
-        if (!response.ok) {
-            throw new Error(response.error);
-        }
-        return response.data;
+        return response;
     };
 
     return {

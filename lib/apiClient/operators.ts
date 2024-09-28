@@ -19,7 +19,7 @@ export const getOperatorsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response.data;
+        return response;
     };
 
     const getOperator = async (operatorId: string) => {
@@ -30,7 +30,7 @@ export const getOperatorsClient = (serverUrl: string) => {
         if (!response.ok) {
             throw new Error(response.error);
         }
-        return response.data;
+        return response;
     };
 
     return {
