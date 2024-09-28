@@ -46,8 +46,23 @@ export const getAuthClient = (serverUrl: string) => {
         return response;
     };
 
+    const validateToken = async (token: string) => {
+        const response = await fetchApi<{ valid: boolean }>(
+            serverUrl,
+            `${route}/validateToken`,
+            {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        );
+        return response;
+    };
+
     return {
         login,
         register,
+        validateToken,
     } as const;
 };

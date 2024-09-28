@@ -15,6 +15,5 @@ type PublicUser = {
 
 type PrivateUser = Omit<PublicUser, 'operators'> & {
     role: Role;
-    email: string;
     operators: Operator<'private'>[];
 };
