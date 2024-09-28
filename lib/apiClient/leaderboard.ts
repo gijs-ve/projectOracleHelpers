@@ -15,10 +15,7 @@ export const getLeaderboardClient = (serverUrl: string) => {
             serverUrl,
             `${route}?world=${world}&take=${take}&offset=${offset}`,
         );
-        if (!leaderboard.ok) {
-            throw new Error(leaderboard.error);
-        }
-        return leaderboard.data;
+        return leaderboard;
     };
 
     return {

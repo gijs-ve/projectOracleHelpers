@@ -4,19 +4,13 @@ import { fetchApi } from './fetch';
 const route = '/words';
 export const getWordsClient = (serverUrl: string) => {
     const getWords = async () => {
-        const words = await fetchApi(serverUrl, `${route}`);
-        if (!words.ok) {
-            throw new Error(words.error);
-        }
-        return words.data;
+        const response = await fetchApi(serverUrl, `${route}`);
+        return response;
     };
 
     const getWord = async (wordId: string) => {
-        const word = await fetchApi<Word>(serverUrl, `${route}/${wordId}`);
-        if (!word.ok) {
-            throw new Error(word.error);
-        }
-        return word.data;
+        const response = await fetchApi<Word>(serverUrl, `${route}/${wordId}`);
+        return response;
     };
 
     return {

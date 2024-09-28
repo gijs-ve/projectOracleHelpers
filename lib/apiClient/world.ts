@@ -8,10 +8,7 @@ export const getWorldClient = (serverUrl: string) => {
             serverUrl,
             `${route}`,
         );
-        if (!world.ok) {
-            throw new Error(world.error);
-        }
-        return world.data;
+        return world;
     };
 
     return {
