@@ -1,8 +1,8 @@
-import { World } from '../types/world';
+import { World } from '../types/worlds';
 import { fetchApi } from './fetch';
 
-const route = '/world';
-export const getWorldClient = (serverUrl: string) => {
+const route = '/worlds';
+export const getWorldsClient = (serverUrl: string) => {
     const getWorld = async (id: string) => {
         const response = await fetchApi<
             Omit<World, 'operators'> & {

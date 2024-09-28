@@ -71,10 +71,34 @@ export const getOperatorsClient = (serverUrl: string) => {
         return response;
     };
 
+    const setWorld = async ({
+        token,
+        operatorId,
+        worldId,
+    }: {
+        token: string;
+        operatorId: string;
+        worldId: string;
+    }) => {
+        const response = await tokenFetchApi<Operator>({
+            serverUrl,
+            route: `${route}/${operatorId}/set-world?id=${worldId}`,
+            token,
+            init: {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            },
+        });
+        return response;
+    };
+
     return {
         createOperator,
         getOperators,
         getOperator,
         getPrivateOperator,
+        setWorld,
     } as const;
 };
