@@ -9,9 +9,7 @@ type BaseItemObject<T extends ItemType> = CoordinatedObject<{
     amount: number;
 }>;
 
-type ItemObject<T extends ItemType> = T extends 'word-card'
-    ? BaseItemObject<T> & { word: string }
-    : T extends 'chest'
+type ItemObject<T extends ItemType> = T extends 'chest'
     ? BaseItemObject<T> & { lootId: string; costs: Cost[] }
     : T extends 'documents'
     ? BaseItemObject<T> & { ref: string }

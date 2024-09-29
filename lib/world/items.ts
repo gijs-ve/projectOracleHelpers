@@ -1,6 +1,1 @@
-export const itemTypes = [
-    'chest',
-    'documents',
-    'middleware',
-    'word-card',
-] as const;
+export const itemTypes = ['chest', 'documents', 'middleware'] as const;

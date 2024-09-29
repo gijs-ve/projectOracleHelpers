@@ -5,6 +5,7 @@ import { getLeaderboardClient } from './leaderboard';
 import { getOperatorsClient } from './operators';
 import { getUsersClient } from './users';
 import { getWordsClient } from './words';
+import { getWorldsClient } from './worlds';
 
 export const newClient = (serverUrl: string) => {
     return {
@@ -15,6 +16,7 @@ export const newClient = (serverUrl: string) => {
         operators: getOperatorsClient(serverUrl),
         users: getUsersClient(serverUrl),
         words: getWordsClient(serverUrl),
+        worlds: getWorldsClient(serverUrl),
     } as const;
 };
 
