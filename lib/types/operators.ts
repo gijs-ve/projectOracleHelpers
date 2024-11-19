@@ -24,7 +24,7 @@ export type PrivateOperator = PublicOperator & {
         2: Letters;
         3: Letters;
     };
-    unlockedWords: Word[];
+    vocabulary: Word[];
     resources: Resource[];
     rooms: Room[];
     inventory: Slot[];
