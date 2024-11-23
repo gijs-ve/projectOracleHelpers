@@ -1,5 +1,6 @@
 export * from './apiClient';
 export * from './types';
+export * from './utils';
 export * from './world/actions';
 export * from './world/generic';
 export * from './world/items';

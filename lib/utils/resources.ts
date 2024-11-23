@@ -31,7 +31,7 @@ const resourcesAreSufficient = ({
     return getResourceCount(resource, checkedDate) >= checkedValue;
 };
 
-export const resourceUtils = {
+export const resources = {
     getResourceCount,
     resourcesAreSufficient,
 };

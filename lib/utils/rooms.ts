@@ -10,6 +10,6 @@ const getAvailableSlotsByRoom = (room: Room): number => {
     return area - occupiedArea;
 };
 
-export const roomsUtil = {
+export const rooms = {
     getAvailableSlotsByRoom,
 };

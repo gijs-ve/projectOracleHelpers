@@ -1,13 +1,13 @@
 import { PrivateOperator } from '../types';
-import { roomsUtil } from './rooms';
+import { rooms } from './rooms';
 
 const getAvailableSlotsByOperator = (operator: PrivateOperator) => {
     return operator.rooms.reduce((acc, room) => {
-        const availableSlotsInRoom = roomsUtil.getAvailableSlotsByRoom(room);
+        const availableSlotsInRoom = rooms.getAvailableSlotsByRoom(room);
         return acc + availableSlotsInRoom;
     }, 0);
 };
 
-export const operatorsUtils = {
+export const operators = {
     getAvailableSlotsByOperator,
 };
