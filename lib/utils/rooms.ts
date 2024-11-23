@@ -8,7 +8,7 @@ import { generic } from './generic';
  */
 
 const getAvailableSlots = (room: Room): number => {
-    return generic.getAvailableSlots(room);
+    return generic.getAvailableSlotCount(room);
 };
 
 export const rooms = {

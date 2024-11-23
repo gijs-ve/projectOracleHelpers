@@ -1,4 +1,4 @@
-import { Slot } from './generic';
+import { Coordinates, Slot } from './generic';
 
 export type DataObject<T> = {
     id: string;
@@ -7,10 +7,7 @@ export type DataObject<T> = {
     ySize: number;
 } & T;
 
-export type CoordinatedObject<T> = DataObject<T> & {
-    x: number;
-    y: number;
-};
+export type CoordinatedObject<T> = DataObject<T> & Coordinates;
 
 export type SlotObject<T> = CoordinatedObject<T> & {
     slots: Slot[];

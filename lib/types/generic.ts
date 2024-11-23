@@ -15,8 +15,6 @@ export type Slot = {
     roomId?: string;
     operatorId?: string;
     stashId?: string;
-    x: number;
-    y: number;
     type: SlotType;
     machineId?: string;
     wordId?: string;
@@ -24,6 +22,11 @@ export type Slot = {
     machine?: Machine;
     word?: Word;
     item?: Item;
+} & Coordinates;
+
+export type Coordinates = {
+    x: number;
+    y: number;
 };
 
 export type Cost<K extends ResourceType = ResourceType> = {

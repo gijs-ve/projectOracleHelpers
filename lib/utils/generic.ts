@@ -1,6 +1,10 @@
 import { Slot } from '../types';
 
-const getAvailableSlots = <
+// const getAvailableSlots = <T extends { slots: Slot[] }>(entity: T): Slot[] => {
+//     return entity.slots.filter((slot) => !slot.item);
+// };
+
+const getAvailableSlotCount = <
     T extends { xSize: number; ySize: number; slots: Slot[] },
 >(
     entity: T,
@@ -14,6 +18,18 @@ const getAvailableSlots = <
     return area - occupiedArea;
 };
 
+/**
+ * Checks if all slots of an entity are empty
+ * @param entity The entity to check
+ * @returns
+ */
+
+const entityIsEmpty = <T extends { slots: Slot[] }>(entity: T): boolean => {
+    return entity.slots.every((slot) => !slot.item || slot.type === 'empty');
+};
+
 export const generic = {
-    getAvailableSlots,
+    // getAvailableSlots,
+    getAvailableSlotCount,
+    entityIsEmpty,
 };
