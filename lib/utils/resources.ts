@@ -9,7 +9,11 @@ const getCount = (resource: Resource, time: number) => {
     const resourceUpdateTime = new Date(resource.updatedAt).getTime();
     const minutesPassed = (time - resourceUpdateTime) / 60000;
     const newAmount = resource.amount + resource.perMinute * minutesPassed;
-    return Math.round(newAmount * 10) / 10;
+    const result = Math.round(newAmount * 10) / 10;
+    if (!result || result < 0) {
+        return 0;
+    }
+    return result;
 };
 
 /**
