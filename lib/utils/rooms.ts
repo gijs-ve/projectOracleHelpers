@@ -1,15 +1,16 @@
 import { Room } from '../types';
+import { generic } from './generic';
 
-const getAvailableSlotsByRoom = (room: Room): number => {
-    const area = room.xSize * room.ySize;
-    const occupiedArea = room.slots.reduce((acc, slot) => {
-        const { item } = slot;
-        if (!item) return acc;
-        return acc + item.xSize * item.ySize;
-    }, 0);
-    return area - occupiedArea;
+/**
+ *
+ * @param room The room to check
+ * @returns
+ */
+
+const getAvailableSlots = (room: Room): number => {
+    return generic.getAvailableSlots(room);
 };
 
 export const rooms = {
-    getAvailableSlotsByRoom,
+    getAvailableSlots,
 };

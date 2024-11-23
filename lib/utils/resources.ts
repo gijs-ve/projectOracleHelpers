@@ -2,12 +2,12 @@ import { Resource } from '../types';
 /**
  *
  * @param resource A resource object
- * @param now The time in milliseconds
+ * @param time The time in milliseconds
  */
 
-const getResourceCount = (resource: Resource, now: number) => {
+const getCount = (resource: Resource, time: number) => {
     const resourceUpdateTime = new Date(resource.updatedAt).getTime();
-    const minutesPassed = (now - resourceUpdateTime) / 60000;
+    const minutesPassed = (time - resourceUpdateTime) / 60000;
     const newAmount = resource.amount + resource.perMinute * minutesPassed;
     return Math.round(newAmount * 10) / 10;
 };
@@ -19,7 +19,7 @@ const getResourceCount = (resource: Resource, now: number) => {
  * @param checkedDate The time to compare against in milliseconds, defaults to Date.now()
  */
 
-const resourcesAreSufficient = ({
+const isSufficient = ({
     resource,
     checkedValue,
     checkedDate = Date.now(),
@@ -28,10 +28,10 @@ const resourcesAreSufficient = ({
     checkedValue: number;
     checkedDate?: number;
 }): boolean => {
-    return getResourceCount(resource, checkedDate) >= checkedValue;
+    return getCount(resource, checkedDate) >= checkedValue;
 };
 
 export const resources = {
-    getResourceCount,
-    resourcesAreSufficient,
+    getCount,
+    isSufficient,
 };
