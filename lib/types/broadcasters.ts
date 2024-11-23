@@ -1,19 +1,20 @@
 import { OracleType } from '../world/oracle';
 import { Tier } from './generic';
 import { DataObject } from './objects';
-import { Wish } from './wishes';
 
-export type Oracle = Omit<
+export type Broadcaster = Omit<
     DataObject<{
-        tier: Tier | 4;
-        wishes: Wish[];
-        rules: OracleRule[];
+        tier: Tier;
         type: OracleType[];
+        messages: Message[];
     }>,
     'xSize' | 'ySize'
 >;
 
-export type OracleRule = {
+export type Message = {
     id: string;
-    description: string;
+    broadcasterId: string;
+    text: string;
+    plannedTime: Date;
+    broadcastTime: Date;
 };
