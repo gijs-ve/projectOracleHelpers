@@ -1,13 +1,29 @@
-import { Resource } from '../types';
+import { Resource, ResourceType } from '../types';
+
 /**
+ * Get a resource from an array of resources
  *
- * @param resource A resource object
- * @param time The time in milliseconds
+ * @param array An array of resources
+ * @param type The type of resource to get
  */
 
-const getCount = (resource: Resource, time: number) => {
+const getFromArray = (array: Resource[], type: ResourceType) => {
+    const result = array.find((resource) => resource.type === type);
+    if (!result) {
+        throw new Error('Resource not found');
+    }
+    return result;
+};
+/**
+ * Get the current count of a resource based on the time provided
+ *
+ * @param resource A resource object
+ * @param checkedTime The time in milliseconds
+ */
+
+const getCount = (resource: Resource, checkedTime: number) => {
     const resourceUpdateTime = new Date(resource.updatedAt).getTime();
-    const minutesPassed = (time - resourceUpdateTime) / 60000;
+    const minutesPassed = (checkedTime - resourceUpdateTime) / 60000;
     const newAmount = resource.amount + resource.perMinute * minutesPassed;
     const result = Math.round(newAmount * 10) / 10;
     if (!result || result < 0) {
@@ -17,6 +33,7 @@ const getCount = (resource: Resource, time: number) => {
 };
 
 /**
+ * Check if a resource has a sufficient amount
  *
  * @param resource A resource object
  * @param checkedValue The value to check against the resource amount
@@ -26,16 +43,17 @@ const getCount = (resource: Resource, time: number) => {
 const isSufficient = ({
     resource,
     checkedValue,
-    checkedDate = Date.now(),
+    checkedTime = Date.now(),
 }: {
     resource: Resource;
     checkedValue: number;
-    checkedDate?: number;
+    checkedTime?: number;
 }): boolean => {
-    return getCount(resource, checkedDate) >= checkedValue;
+    return getCount(resource, checkedTime) >= checkedValue;
 };
 
 export const resources = {
+    getFromArray,
     getCount,
     isSufficient,
 };
